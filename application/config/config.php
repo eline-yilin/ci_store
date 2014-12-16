@@ -362,6 +362,8 @@ $config['proxy_ips'] = '';
 /* Location: ./application/config/config.php */
 $config['base_theme_url']	= 'http://localhost/store/public/themes/';
 $config['api_url']	= 'http://localhost/ci/index.php/api/';
+$config['cdn_url'] = 'http://localhost/ci/public/';
+$config['cdn_url_upload_img'] = $config['cdn_url'] . 'img/upload/';
 $config['nav_arr'] = array(
 
     "bussiness" => array(

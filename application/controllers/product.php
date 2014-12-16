@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
-class product extends CI_Controller {
+require APPPATH.'/libraries/My_Controller.php';
+class product extends My_Controller {
 
 	/**
 	 * Index Page for this controller.
@@ -19,15 +19,27 @@ class product extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$request_url = 'product/list/format/json';
+		$resp = my_api_request($request_url , $method = 'get', $param = array());
+		//$data = array();
+		//$data = my_api_request
+		if(isset($resp['img']))
+		{
+		 	$imgs = explode($resp['img'], ',');
+		 	$resp['img'] = $imgs[0];
+		 	
+		}
+		$data = array('items'=>json_decode($resp, true));
+		$this->load->view('templates/header', 
+				$data
+		);
+		$this->load->view('pages/product/list', $data);
+		$this->load->view('templates/footer', $data);
 	}
 	public function detail()
 	{
-		$this->load->helper('api');
-		$api_url = $this->config->item( 'api_url');
 		$request_url = 'store/detail/id/1/format/json';
-		$final_url = $api_url . $request_url;
-		$data = my_api_request($final_url , $method = 'get', $param = array());
+		$data = my_api_request($request_url , $method = 'get', $param = array());
 		//$data = array();
 		//$data = my_api_request
 		$data = json_decode($data, true);
@@ -37,7 +49,7 @@ class product extends CI_Controller {
 						
 				)
 		);
-		$this->load->view('pages/products', $data);
+		$this->load->view('pages/product/detail', $data);
 		$this->load->view('templates/footer', $data);
 		
 	}
