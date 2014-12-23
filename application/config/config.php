@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = '';
+$config['encryption_key'] = 'mystore';
 
 /*
 |--------------------------------------------------------------------------
@@ -364,6 +364,8 @@ $config['base_theme_url']	= 'http://localhost/store/public/themes/';
 $config['api_url']	= 'http://localhost/ci/index.php/api/';
 $config['cdn_url'] = 'http://localhost/ci/public/';
 $config['cdn_url_upload_img'] = $config['cdn_url'] . 'img/upload/';
+$config['api_username']	=  'dash_super';
+$config['api_password']	=  'ama:;5IyC9V]VlK';
 $config['nav_arr'] = array(
 
     "bussiness" => array(
