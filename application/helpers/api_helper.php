@@ -41,12 +41,11 @@ if ( ! function_exists('my_api_request'))
 		
 		curl_setopt ( $ch, CURLOPT_URL,  $final_url );
 		// 执行并获取HTML文档内容
-		$output = curl_exec ( $ch );var_dump($output);
+		$output = curl_exec ( $ch );
 		// 释放curl句柄
 		curl_close ( $ch );
-		
+		//var_dump($output);die;
 		return $output;
-		//print_r ( $output );
        
     }   
 }

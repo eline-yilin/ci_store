@@ -1,6 +1,11 @@
 <div class="container-fluid">
 	    <div class='product-list'>
-	    <?php foreach($items as $product):?>
+	    <?php 
+	    if($error){
+	    	//var_dump($error);
+	    }
+	    else{
+	    foreach($items as $product):?>
 	       <div class="panel panel-warning">
 	            <div class="panel-heading"><?php echo $product['name']?></div>
 	       		<div class="panel-body">
@@ -45,6 +50,6 @@
 				</div>
  		   		<div class="panel-footer">Panel footer</div>
 	       </div>
-	       <?php endforeach;?>
+	       <?php endforeach;}?>
 	    </div>
     </div>

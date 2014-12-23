@@ -21,18 +21,28 @@ class product extends My_Controller {
 	{
 		$request_url = 'product/list/format/json';
 		$resp = my_api_request($request_url , $method = 'get', $param = array());
-		//$data = array();
-		//$data = my_api_request
-		if(isset($resp['img']))
+		$resp = json_decode($resp,true);
+		if(isset($resp['error']))
 		{
-		 	$imgs = explode($resp['img'], ',');
-		 	$resp['img'] = $imgs[0];
-		 	
+			$data = array('error'=>$resp['error']);
 		}
-		$data = array('items'=>json_decode($resp, true));
+	    else {
+	    	foreach($resp as $item){
+	    		if(isset($item['img']))
+	    		{
+	    			$imgs = explode($item['img'], ',');
+	    			$item['img'] = $imgs[0];
+	    		
+	    		}
+	    	}
+	    	$data = array('items'=>$resp);
+	    }
+		
+		
 		$this->load->view('templates/header', 
 				$data
 		);
+	
 		$this->load->view('pages/product/list', $data);
 		$this->load->view('templates/footer', $data);
 	}
