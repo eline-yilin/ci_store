@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	    <div class='product-list'>
 	    <?php 
-	    if($error){
+	    if(isset($error)){
 	    	//var_dump($error);
 	    }
 	    else{

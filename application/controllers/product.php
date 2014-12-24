@@ -24,27 +24,27 @@ class product extends My_Controller {
 		$resp = json_decode($resp,true);
 		if(isset($resp['error']))
 		{
-			$data = array('error'=>$resp['error']);
+			$this->data['error'] = $resp['error'];
 		}
 	    else {
 	    	foreach($resp as $item){
-	    		if(isset($item['img']))
+	    		if(isset($item['img']) && $item['img'] )
 	    		{
 	    			$imgs = explode($item['img'], ',');
 	    			$item['img'] = $imgs[0];
 	    		
 	    		}
 	    	}
-	    	$data = array('items'=>$resp);
+	    	$this->data['items'] = $resp;
 	    }
 		
 		
 		$this->load->view('templates/header', 
-				$data
+				$this->data
 		);
 	
-		$this->load->view('pages/product/list', $data);
-		$this->load->view('templates/footer', $data);
+		$this->load->view('pages/product/list', $this->data);
+		$this->load->view('templates/footer', $this->data);
 	}
 	public function detail()
 	{
