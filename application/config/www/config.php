@@ -364,6 +364,8 @@ $config['base_theme_url']	= 'http://120.24.73.33:8080/ci_store/public/themes/';
 $config['api_url']	= 'http://120.24.73.33:8080/ci/index.php/api/';
 $config['cdn_url'] = 'http://120.24.73.33:8080/ci/public/';
 $config['cdn_url_upload_img'] = $config['cdn_url'] . 'img/upload/';
+$config['api_username']	=  'dash_super';
+$config['api_password']	=  'ama:;5IyC9V]VlK';
 $config['nav_arr'] = array(
 
     "bussiness" => array(
