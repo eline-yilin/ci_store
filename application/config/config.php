@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/store/';
+$config['base_url']	= 'http://localhost/store/index.php/';
 
 /*
 |--------------------------------------------------------------------------
@@ -368,14 +368,14 @@ $config['api_username']	=  'dash_super';
 $config['api_password']	=  'ama:;5IyC9V]VlK';
 $config['nav_arr'] = array(
 
-    "bussiness" => array(
-    			'text'=>"产品列表"
+    	"product" => array(
+    			'text'=>"产品管理"
     			),
-		"about" => array(
-				'text'=>"关于我们"
+		"order" => array(
+				'text'=>"订单管理"
 		),
 
-		"contact" => array(
-				'text'=>"联系我们"
-		),
+		/* "user" => array(
+				'text'=>"用户管理"
+		), */
 );

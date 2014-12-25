@@ -2,7 +2,7 @@ var current_page = default_page = 'bussiness';
 
 $(document).ready(function(){
 	
-	var current_page = getHash() || default_page;
+	/*var current_page = getHash() || default_page;
 	$('#nav-item-' + current_page).addClass('active');
 	var docHeight = $(document).height();
 	$('.page-section').css('min-height', docHeight + 'px');
@@ -23,8 +23,8 @@ $(document).ready(function(){
 		
 		//$('html body').animate({ scrollTop: 580 }, 800);
 		$('html body').animate({ scrollTop: $('#' + current_page + '-content').offset().top - 50 }, time_diff);
-	});
+	});*/
 	//alert($('.nav li.nav-item.active').attr('id'));
-	$('.nav li.nav-item.active').trigger('click');
+	//$('.nav li.nav-item.active').trigger('click');
 	
 });
